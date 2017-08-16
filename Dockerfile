@@ -4,7 +4,7 @@ MAINTAINER Mike Wilson <geekinutah@gmail.com>
 ENV TERM=xterm-256color
 
 RUN apt-get -q update >/dev/null
-RUN apt-get install -y software-properties-common dmidecode wget
+RUN apt-get install -y software-properties-common dmidecode wget psmisc
 RUN wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
 RUN echo "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main" > /etc/apt/sources.list.d/saltstack.list
 RUN apt-get -q update >/dev/null
