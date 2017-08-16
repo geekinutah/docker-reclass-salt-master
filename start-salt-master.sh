@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 svn export --force https://github.com/salt-formulas/salt-formulas/trunk/deploy/scripts /srv/salt/scripts
 cd /srv/salt/scripts
 MASTER_HOSTNAME=`hostname -f` /srv/salt/scripts/salt-master-init.sh
