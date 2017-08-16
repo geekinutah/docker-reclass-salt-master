@@ -20,6 +20,6 @@ RUN rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 
 EXPOSE 4505 4506 443
-VOLUME ["/srv/salt/reclass", "/etc/salt/pki"]
+VOLUME ["/srv/salt/reclass/", "/etc/salt/pki/", "/root/ssh-agent.sock"]
 
 ENTRYPOINT ["start-salt-master.sh"]

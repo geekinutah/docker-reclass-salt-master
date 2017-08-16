@@ -1,5 +1,6 @@
 cd /srv/salt/scripts
 MASTER_HOSTNAME='hostname -f' salt-master-init.sh
+SSH_AUTH_SOCK='/root/ssh-agent.sock'
 source /srv/salt/scripts/salt-master-init.sh
 verify-salt-master
 verify-salt-minions
