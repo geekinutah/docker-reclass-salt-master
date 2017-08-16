@@ -12,4 +12,4 @@ salt-call salt.client
 salt-call state.apply salt,reclass,ntp --state-output=changes -lerror
 salt-call state.apply --state-output=changes -lerror
 /usr/bin/killall salt-master
-exec /usr/bin/salt-master --log-level=$LOG_LEVEL
+exec /usr/bin/salt-master --log-level=all
