@@ -1,9 +1,9 @@
 #!/bin/bash
 svn export --force https://github.com/salt-formulas/salt-formulas/trunk/deploy/scripts /srv/salt/scripts
 cd /srv/salt/scripts
-MASTER_HOSTNAME='hostname -f' /srv/salt/scripts/salt-master-init.sh
+MASTER_HOSTNAME=`hostname -f` /srv/salt/scripts/salt-master-init.sh
 SSH_AUTH_SOCK='/root/ssh-agent.sock' # TODO: This is kinda scary
-source /srv/salt/scripts/salt-master-init.sh
+. /srv/salt/scripts/salt-master-init.sh
 verify-salt-master
 verify-salt-minions
 /usr/bin/salt-master &
