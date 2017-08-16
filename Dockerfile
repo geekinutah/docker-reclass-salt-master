@@ -18,8 +18,10 @@ RUN apt-get clean autoclean
 RUN apt-get autoremove --yes
 RUN rm -rf /var/lib/{apt,dpkg,cache,log}/ 
 
+ADD start-salt-master.sh /usr/local/bin/start-salt-master.sh
+RUN chmod +x /usr/local/bin/start-salt-master.sh
 
 EXPOSE 4505 4506 443
 VOLUME ["/srv/salt/reclass/", "/etc/salt/pki/", "/root/ssh-agent.sock"]
 
-ENTRYPOINT ["start-salt-master.sh"]
+ENTRYPOINT ["/usr/local/bin/start-salt-master.sh"]
