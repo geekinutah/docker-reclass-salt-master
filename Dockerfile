@@ -10,8 +10,7 @@ RUN echo "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial mai
 RUN apt-get -q update >/dev/null
 RUN apt-get install -y git curl subversion
 RUN apt-get upgrade -y -o DPkg::Options::=--force-confold
-RUN mkdir -p /srv/salt/scripts
-RUN mkdir -p /src/salt/reclass
+RUN mkdir -p /srv/salt/scripts /etc/salt/pki/minion /srv/salt/reclass
 
 # Cleanup
 RUN apt-get clean autoclean
