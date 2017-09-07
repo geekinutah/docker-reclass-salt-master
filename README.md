@@ -9,11 +9,7 @@ Spin up a simple salt master with your reclass model, it can then be connected t
 
 Run like so:
 
-    $ docker run -it --rm --privileged -v /home/username/git/my-model/:/srv/salt/reclass -v $SSH_AUTH_SOCK:/root/ssh-agent.sock -h cfg01.mydeploy.local geekinutah/reclass-salt-master
+    $ docker run -it --rm -v /home/username/git/my-model/:/srv/salt/reclass -v $SSH_AUTH_SOCK:/root/ssh-agent.sock -h cfg01.mydeploy.local geekinutah/reclass-salt-master
 
 If you are connecting it to VMs, other containers, etc, you will need to consider adding docker networks. This is recommended, but left up to the user to figure out.
 
-
-## TODO
-
-Not great that this is a privileged docker container, need to isolate actual needed permissions. Currently privileged because salt likes to run 'dmidecode'.
