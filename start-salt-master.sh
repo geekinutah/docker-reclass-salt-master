@@ -2,7 +2,7 @@
 if `grep -q alldone /root/everythingisread`; then
   exec /usr/bin/salt-master --log-level=error
 else
-  svn export --force https://github.com/salt-formulas/salt-formulas/trunk/deploy/scripts /srv/salt/scripts
+  svn export --force https://github.com/salt-formulas/salt-formulas-scripts/trunk /srv/salt/scripts
   cd /srv/salt/scripts
   MASTER_HOSTNAME=`hostname -f` /srv/salt/scripts/salt-master-init.sh
   SSH_AUTH_SOCK='/root/ssh-agent.sock' # TODO: This is kinda scary
